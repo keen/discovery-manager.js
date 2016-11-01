@@ -1,0 +1,27 @@
+{
+  "sum-successful-events-daily-utc": {
+    "display_name": "Events Recorded (daily)",
+    "query": {
+      "analysis_type": "sum",
+      "event_collection": "events_added_api_call",
+      "target_property": "num_successful_events",
+      "timeframe": "this_60_days",
+      "interval": "daily",
+      "timezone": "UTC"
+    },
+    "dimensions": ["project.organization.id"]
+  },
+
+  "sum-failed-events-daily-utc": {
+    "display_name": "Events Failed (daily)",
+    "query": {
+      "analysis_type": "sum",
+      "event_collection": "events_added_api_call",
+      "target_property": "num_failed_events",
+      "timeframe": "this_60_days",
+      "interval": "daily",
+      "timezone": "UTC"
+    },
+    "dimensions": ["project.organization.id"]
+  }
+}
