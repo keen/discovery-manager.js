@@ -64,7 +64,7 @@ Fill out the file to define your Discovery definitions like the example below. E
 }
 ```
 
-### Run the scripts
+### Run the script
 
 When you run this command, the script will check each Discovery definition from `definitions.json` and create any Discoveries that do not already exist.
 
