@@ -1,10 +1,10 @@
 # Discovery Manager
 
-This basic utility will create Discoveries for internal use. The instructions below should help you get started. Keep in mind, you should not need to touch any of the actual JavaScript for this tool to do its job. If you get stuck here, give [Dustin](mailto:dustin@keen.io) a shout. He'll be more than happy to help you out!
+This basic utility will create Discoveries for BETA use. The instructions below should help you get started. Keep in mind, you should not need to touch any of the actual JavaScript for this tool to do its job. If you get stuck here, give us a shout. We'll be more than happy to help you out!
 
 ## Getting Started
 
-This utility requires NodeJS v4 or higher. If you don't have this (or aren't sure) [install nvm](https://github.com/creationix/nvm#install-script) and [install any version](https://github.com/creationix/nvm#usage) from 4.0 on up. If you get stuck here, ping [Dustin](mailto:dustin@keen.io).
+This utility requires NodeJS v4 or higher. If you don't have this (or aren't sure) [install nvm](https://github.com/creationix/nvm#install-script) and [install any version](https://github.com/creationix/nvm#usage) from 4.0 on up. If you get stuck here, ping us!
 
 ### Installation
 
@@ -37,29 +37,29 @@ Fill out the file to define your Discovery definitions like the example below. E
 
 ```json
 {
-  "sum-successful-events-daily-utc": {
-    "display_name": "Events Recorded (daily)",
+  "hourly-sum-purchases-for-stores": {
+    "display_name": "Sum Purchases for Stores (Hourly)!",
     "query": {
       "analysis_type": "sum",
-      "event_collection": "events_added_api_call",
-      "target_property": "num_successful_events",
-      "timeframe": "this_60_days",
-      "interval": "daily",
+      "event_collection": "purchases",
+      "target_property": "price",
+      "timeframe": "this_500_hours",
+      "interval": "hourly",
       "timezone": "UTC"
     },
-    "dimensions": ["project.organization.id"]
+    "dimensions": ["store.id"]
   },
-  "sum-failed-events-daily-utc": {
-    "display_name": "Events Failed (daily)",
+  "daily-sum-purchases-for-stores": {
+    "display_name": "Sum Purchases for Stores (Daily)!",
     "query": {
       "analysis_type": "sum",
-      "event_collection": "events_added_api_call",
-      "target_property": "num_failed_events",
-      "timeframe": "this_60_days",
+      "event_collection": "purchases",
+      "target_property": "price",
+      "timeframe": "this_500_days",
       "interval": "daily",
       "timezone": "UTC"
     },
-    "dimensions": ["project.organization.id"]
+    "dimensions": ["store.id"]
   }
 }
 ```
