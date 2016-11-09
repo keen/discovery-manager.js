@@ -1,27 +1,26 @@
 {
-  "sum-successful-events-daily-utc": {
-    "display_name": "Events Recorded (daily)",
+  "hourly-sum-purchases-for-stores": {
+    "display_name": "Sum Purchases for Stores (Hourly)!",
     "query": {
       "analysis_type": "sum",
-      "event_collection": "events_added_api_call",
-      "target_property": "num_successful_events",
-      "timeframe": "this_60_days",
-      "interval": "daily",
+      "event_collection": "purchases",
+      "target_property": "price",
+      "timeframe": "this_500_hours",
+      "interval": "hourly",
       "timezone": "UTC"
     },
-    "dimensions": ["project.organization.id"]
+    "dimensions": ["store.id"]
   },
-
-  "sum-failed-events-daily-utc": {
-    "display_name": "Events Failed (daily)",
+  "daily-sum-purchases-for-stores": {
+    "display_name": "Sum Purchases for Stores (Daily)!",
     "query": {
       "analysis_type": "sum",
-      "event_collection": "events_added_api_call",
-      "target_property": "num_failed_events",
-      "timeframe": "this_60_days",
+      "event_collection": "purchases",
+      "target_property": "price",
+      "timeframe": "this_500_days",
       "interval": "daily",
       "timezone": "UTC"
     },
-    "dimensions": ["project.organization.id"]
+    "dimensions": ["store.id"]
   }
 }
