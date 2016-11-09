@@ -6,7 +6,7 @@ const masterKey = process.env['MASTER_KEY'] || 'YOUR_MASTER_KEY'
 const discoRef = `https://api.keen.io/3.0/projects/${projectId}/discoveries`
 
 // Run
-createAll()
+createAll(masterKey)
 
 function createAll(api_key, done) {
   const keys = Object.keys(getDiscoDef())
