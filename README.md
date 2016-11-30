@@ -64,10 +64,17 @@ Fill out the file to define your Discovery definitions like the example below. E
 }
 ```
 
-### Run the script
+### Create Discoveries
 
 When you run this command, the script will check each Discovery definition from `definitions.json` and create any Discoveries that do not already exist.
 
 ```ssh
-$ npm start
+$ npm run create
+```
+### Delete Discoveries
+
+When you run this command, the script will check each Discovery definition from `definitions.json` and delete any Discoveries that exist.
+
+```ssh
+$ npm run destroy
 ```

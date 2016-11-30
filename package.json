@@ -8,7 +8,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js",
+    "create": "node index.js",
+    "destroy": "node destroy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dustin Larimer <dustin@keen.io>",

@@ -7,29 +7,29 @@ const masterKey = process.env['MASTER_KEY'] || 'YOUR_MASTER_KEY'
 const discoRef = utils.getDiscoRef(projectId)
 
 // Run
-createAll((err, res) => {
+destroyAll((err, res) => {
   console.log(err);
   console.log(res.body);
 })
 
-function createAll(done) {
+function destroyAll(done) {
   Object.keys(definitions).forEach((key) => {
-    console.log(`Create ${utils.getDiscoRef(projectId, key)}`)
+    console.log(`Delete ${utils.getDiscoRef(projectId, key)}`)
     utils.findOne(projectId, key, masterKey, (err, res) => {
       if (err && err.response && err.response.error.status === 404) {
-        createOne(key, masterKey, done)
+        console.log(`${key} does not exists`)
       }
       else {
-        console.log(`${key} already exists`)
+        destroyOne(key, masterKey, done)
       }
     })
   })
 }
 
-function createOne(ref, api_key, done) {
+function destroyOne(ref, api_key, done) {
   request
-    .put(utils.getDiscoRef(projectId, ref))
-    .send(definitions[ref])
+    .delete(utils.getDiscoRef(projectId, ref))
+    .send()
     .set('Authorization', api_key)
     .set('Content-Type', 'application/json')
     .end(done)
