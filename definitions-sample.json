@@ -9,7 +9,7 @@
       "interval": "hourly",
       "timezone": "UTC"
     },
-    "dimensions": ["store.id"]
+    "index_by": ["store.id"]
   },
   "daily-sum-purchases-for-stores": {
     "display_name": "Sum Purchases for Stores (Daily)!",
@@ -21,6 +21,6 @@
       "interval": "daily",
       "timezone": "UTC"
     },
-    "dimensions": ["store.id"]
+    "index_by": ["store.id"]
   }
 }
