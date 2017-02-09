@@ -3,7 +3,7 @@ const definitions = require('./definitions')
 
 const projectId = process.env['PROJECT_ID'] || 'YOUR_PROJECT_ID'
 const masterKey = process.env['MASTER_KEY'] || 'YOUR_MASTER_KEY'
-const discoRef = `https://api.keen.io/3.0/projects/${projectId}/discoveries`
+const discoRef = `https://api.keen.io/3.0/projects/${projectId}/datasets`
 
 // Run
 createAll(masterKey, (err, res) => {
