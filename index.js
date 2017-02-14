@@ -26,6 +26,22 @@ function createAll(api_key, done) {
   })
 }
 
+function getAll(api_key, done) {
+  request
+    .get(discoRef)
+    .set('Authorization', api_key)
+    .set('Content-Type', 'application/json')
+    .end(done)
+}
+
+function deleteOne(ref, api_key, done) {
+  request
+    .delete(getDiscoRef(ref))
+    .set('Authorization', api_key)
+    .set('Content-Type', 'application/json')
+    .end(done)
+}
+
 function createOne(ref, api_key, done) {
   request
     .put(getDiscoRef(ref))
